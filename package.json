@@ -1,18 +1,10 @@
 {
-  "name": "egg-kmore",
+  "name": "npm-base",
   "author": "waiting",
-  "version": "0.2.4",
-  "description": "egg plugin of kmore",
-  "eggPlugin": {
-    "name": "kmore"
-  },
+  "version": "0.0.1",
+  "description": "npm boilerplate",
   "keywords": [
-    "midway",
-    "egg",
-    "eggPlugin",
-    "egg-plugin",
-    "knex",
-    "kmore",
+    "种子项目",
     "typescript",
     "ts"
   ],
@@ -22,16 +14,16 @@
   "bin": {},
   "browser": "",
   "es2015": "",
-  "main": "./index.cjs.js",
-  "module": "./index.js",
-  "types": "./index.d.ts",
+  "main": "./dist/index.cjs.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "bugs": {
-    "url": "https://github.com/waitingsong/egg-kmore/issues"
+    "url": "https://github.com/waitingsong/npm-base/issues"
   },
-  "homepage": "https://waitingsong.github.io/egg-kmore",
+  "homepage": "https://github.com/waitingsong/npm-base#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/waitingsong/egg-kmore.git"
+    "url": "git+https://github.com/waitingsong/npm-base.git"
   },
   "license": "MIT",
   "nyc": {
@@ -56,8 +48,7 @@
     "all": true
   },
   "dependencies": {
-    "kmore": "^0.10.0",
-    "kmore-cli": "^0.2.0"
+    "rxjs": "^6.5.2"
   },
   "devDependencies": {
     "@types/mocha": "*",
@@ -69,15 +60,12 @@
     "@waiting/eslint-config": "^2.1.0",
     "coveralls": "^3.0.5",
     "cross-env": "^5.2.0",
-    "egg": "^2.23.0",
     "eslint": "^6.1.0",
     "espower-typescript": "^9.0.2",
     "intelli-espower-loader": "^1.0.1",
-    "knex": "^0.19.1",
     "mocha": "^6.1.4",
     "mocha-lcov-reporter": "^1.3.0",
     "nyc": "^14.1.1",
-    "pg": "^7.11.0",
     "power-assert": ">=1.5",
     "rewire": "^4.0.0",
     "rimraf": "^2.6.2",
@@ -88,10 +76,6 @@
     "ts-node": "^8.3.0",
     "typescript": "^3.5.0",
     "yargs": "^13.0.0"
-  },
-  "peerDependencies": {
-    "knex": ">=0.15.0",
-    "typescript": "^3.5.0"
   },
   "scripts": {
     "bp:add": "git remote add bp https://github.com/waitingsong/npm-base",
@@ -105,6 +89,7 @@
     "jslint": "eslint --fix dist/**/*.js",
     "link_global": "npm link typescript",
     "lint": "eslint --fix {src,test}/**/*.ts",
+    "postpublish": "git push origin --follow-tags",
     "prepublishOnly": "npm run clean && npm run build",
     "release": "standard-version -r",
     "release:first": "standard-version --first-release",
